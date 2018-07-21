@@ -99,7 +99,7 @@ $(function() {
    /* TODO: Write a new test suite named "New Feed Selection" */
    describe('New Feed Selection:', () => {
       beforeEach((done) => {
-         let feeds = document.querySelectorAll('.entry');
+         // let feeds = document.querySelectorAll('.entry');
          loadFeed(0, () => {
             done();
          })
@@ -110,7 +110,7 @@ $(function() {
        */
       it(' the content has changed', () => {
          let feeds = document.querySelectorAll('.entry');
-         // expect(feeds.innerText).toHaveText(True);
+         expect(feeds[0].innerText).not.toBe(feeds[1].innerText);
       })
    });
 }());
