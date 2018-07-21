@@ -99,7 +99,7 @@ $(function() {
    /* TODO: Write a new test suite named "New Feed Selection" */
    describe('New Feed Selection:', () => {
       beforeEach((done) => {
-         // let feeds = document.querySelectorAll('.entry');
+
          loadFeed(0, () => {
             done();
          })
