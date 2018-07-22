@@ -30,9 +30,9 @@ $(function() {
        */
       it("has an URL defined and not empty", () => {
          // let allFeeds=[...webAddress];
-         for (let webAddress of allFeeds) {
-            expect(webAddress.url).toBeDefined();
-            expect(webAddress.url).not.toBe(0);
+         for (let feed of allFeeds) {
+            expect(feed.url).toBeDefined();
+            expect(feed.url).not.toBe(0);
          }
       });
       /* TODO: Write a test that loops through each feed
@@ -49,13 +49,11 @@ $(function() {
    });
    /* TODO: Write a new test suite named "The menu" */
    describe('Menu element', () => {
-      let menu,
-         menuHidden,
-         menuClicked;
+      let menuHidden;
+      let menuClicked
       beforeEach(() => {
-         menu = document.querySelector('body');
-         menuHidden = document.getElementsByClassName('menu-hidden');
-         menuClicked = document.querySelector('.menu-icon-link'); //Simulate a click event
+         menuHidden = document.querySelector('body');
+         menuClicked = document.querySelector('.menu-icon-link');
       });
       /* TODO: Write a test that ensures the menu element is
        * hidden by default. You'll have to analyze the HTML and
@@ -63,7 +61,7 @@ $(function() {
        * hiding/showing of the menu element.
        */
       it(' is hidden by default', () => {
-         expect(menuHidden.length).toBe(1); //1=Hidden && 0 =  visible
+         expect(menuHidden).toHaveClass('menu-hidden');
       })
       /* TODO: Write a test that ensures the menu changes
        * visibility when the menu icon is clicked. This test
@@ -71,12 +69,13 @@ $(function() {
        * clicked and does it hide when clicked again.
        */
       it('changes visibility when clicked', () => {
+         // let menuHidden = document.querySelector('body');
          //Menu Visible
-         menuClicked.click();
-         expect(menuHidden.length).toBe(0);
+         menuClicked.click(); //Simulate a click event
+         expect(menuHidden).not.toHaveClass('menu-hidden');
          //Menu Hidden
          menuClicked.click();
-         expect(menuHidden.length).toBe(1);
+         expect(menuHidden).toHaveClass('menu-hidden');
       })
    })
    //     /* TODO: Write a new test suite named "Initial Entries" */
@@ -91,17 +90,23 @@ $(function() {
       //      * a single .entry element within the .feed container.
       //      * Remember, loadFeed() is asynchronous so this test will require
       //      * the use of Jasmine's beforeEach and asynchronous done() function.
-      it(' at least a single entry within the .feed container', () => {
-         let feeds = document.querySelectorAll('.entry');
-         expect(feeds.length).toBeGreaterThan(0);
+      it(' at least a single entry within the feed container', (done) => {
+         let feedsEntry = document.querySelectorAll('.entry'); //Select array of feed entries
+         expect(feedsEntry.length).toBeGreaterThan(0);
+         done();
       })
    });
    /* TODO: Write a new test suite named "New Feed Selection" */
    describe('New Feed Selection:', () => {
+      let feedOne, //Udacity Blog
+         feedTwo; //CSS Tricks
       beforeEach((done) => {
-
-         loadFeed(0, () => {
-            done();
+         loadFeed(0, () => { //loadFeed(0)--> Loads the feeds for the Udacity Blog
+            feedOne = document.querySelector('.feed').innerHTML;
+            loadFeed(1, () => { //loadFeed(1)--> Loads the feeds for CSS Tricks
+               feedTwo = document.querySelector('.feed').innerHTML;
+               done();
+            })
          })
       })
       /* TODO: Write a test that ensures when a new feed is loaded
@@ -109,8 +114,8 @@ $(function() {
        * Remember, loadFeed() is asynchronous.
        */
       it(' the content has changed', () => {
-         let feeds = document.querySelectorAll('.entry');
-         expect(feeds[0].innerText).not.toBe(feeds[1].innerText);
+         //Compare HTML content between feedOne and feedTwo
+         expect(feedOne).not.toBe(feedTwo);
       })
    });
 }());
