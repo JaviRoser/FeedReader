@@ -1,4 +1,3 @@
-
 # Feed Reader Testing
 
 # Project Overview
@@ -7,7 +6,7 @@ In this project a web-based application that reads RSS feeds is given. The origi
 ## What will I do?
 Write a number of tests against a pre-existing application. These will test the underlying business logic of the application as well as the event handling and DOM manipulation.
 
-# How I complete this project?
+## How I complete this project?
 To complete this project, we write the following tests:
 A test that loops through each feed in the `allFeeds` object and ensures it has a URL defined and that the URL is not empty.
 A test that loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.
