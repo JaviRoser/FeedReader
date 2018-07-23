@@ -41,7 +41,7 @@ $(function() {
       it('has a name defined and not empty', () => {
          for (let feedName of allFeeds) {
             expect(feedName.name).toBeDefined();
-            expect(feedName.name).not.toBe(0); 
+            expect(feedName.name).not.toBe(0); //Not Empty
          }
       });
    });
@@ -67,7 +67,6 @@ $(function() {
        * clicked and does it hide when clicked again.
        */
       it('changes visibility when clicked', () => {
-         // let menuHidden = document.querySelector('body');
          //Menu Visible
          menuClicked.click(); //Simulate a click event
          expect(menuHidden).not.toHaveClass('menu-hidden');
@@ -79,31 +78,28 @@ $(function() {
    //     /* TODO: Write a new test suite named "Initial Entries" */
    describe('Initial Entries:', () => {
       beforeEach((done) => {
-         loadFeed(0, () => {
-            done();
-         })
+         loadFeed(0, done); //Loads Udacity Blog Feeds before checking the entries in test
       })
       //          TODO: Write a test that ensures when the loadFeed
       //      * function is called and completes its work, there is at least
       //      * a single .entry element within the .feed container.
       //      * Remember, loadFeed() is asynchronous so this test will require
       //      * the use of Jasmine's beforeEach and asynchronous done() function.
-      it(' at least a single entry within the feed container', (done) => {
+      it(' at least a single entry within the feed container', () => {
          let feedsEntry = document.querySelectorAll('.entry'); //Select array of feed entries
          expect(feedsEntry.length).toBeGreaterThan(0);
-         done();
       })
    });
    /* TODO: Write a new test suite named "New Feed Selection" */
    describe('New Feed Selection:', () => {
-      let feedOne, //Udacity Blog
-         feedTwo; //CSS Tricks
+      let feedOne, //Udacity Blog feeds
+         feedTwo; //CSS Tricks feeds
       beforeEach((done) => {
          loadFeed(0, () => { //loadFeed(0)--> Loads the feeds for the Udacity Blog
             feedOne = document.querySelector('.feed').innerHTML;
             loadFeed(1, () => { //loadFeed(1)--> Loads the feeds for CSS Tricks
                feedTwo = document.querySelector('.feed').innerHTML;
-               done();
+               done(); //Finish loading the two feeds
             })
          })
       })
@@ -112,7 +108,8 @@ $(function() {
        * Remember, loadFeed() is asynchronous.
        */
       it(' the content has changed', () => {
-         //Compare HTML content between feedOne and feedTwo
+         /*Compare HTML inner content between feedOne and feedTwo if 
+         they are not equal the feed has changed*/
          expect(feedOne).not.toBe(feedTwo);
       })
    });
