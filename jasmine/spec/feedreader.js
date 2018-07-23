@@ -29,7 +29,6 @@ $(function() {
        * and that the URL is not empty.
        */
       it("has an URL defined and not empty", () => {
-         // let allFeeds=[...webAddress];
          for (let feed of allFeeds) {
             expect(feed.url).toBeDefined();
             expect(feed.url).not.toBe(0);
@@ -40,10 +39,9 @@ $(function() {
        * and that the name is not empty.
        */
       it('has a name defined and not empty', () => {
-         // let allFeeds=[...webAddress];
          for (let feedName of allFeeds) {
             expect(feedName.name).toBeDefined();
-            expect(feedName.name).not.toBe(0);
+            expect(feedName.name).not.toBe(0); 
          }
       });
    });
