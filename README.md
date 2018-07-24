@@ -11,4 +11,6 @@
 	-  **Download a zip File:** https://github.com/JaviRoser/FeedReader/archive/master.zip
 	-  **Clone a repo:**  git clone https://github.com/JaviRoser/FeedReader.git
 
-2. Run the index.html, and the tests result will appear at the bottom of your browser
+2. Run the index.html, and the tests result will appear at the bottom of your browser as shown below
+
+![capture](https://user-images.githubusercontent.com/25829140/43112463-3fbccd44-8ec4-11e8-9500-b225612a8819.JPG)
