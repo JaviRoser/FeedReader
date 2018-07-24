@@ -7,6 +7,7 @@
 # How to run it
 
 1. Download the zip file or clone the repo onto your computer:
-	* **Download a zip File: ** https://github.com/JaviRoser/FeedReader/archive/master.zip
-	* **Clone a repo: **  git clone https://github.com/JaviRoser/FeedReader.git
+
+	-  **Download a zip File:** https://github.com/JaviRoser/FeedReader/archive/master.zip
+	-  **Clone a repo:**  git clone https://github.com/JaviRoser/FeedReader.git
 
