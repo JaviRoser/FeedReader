@@ -43,5 +43,6 @@
 ehthumbs.db
 Thumbs.db
 
-
+# Dependency directory
 node_modules
+
