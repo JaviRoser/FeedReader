@@ -13,5 +13,4 @@
 
 2. Run the index.html, and the tests result will appear at the bottom of your browser as shown below
 
-![image](https://user-images.githubusercontent.com/25829140/43112395-f978bfbe-8ec3-11e8-8473-a49e3febdaa7.png)
-
+![capture](https://user-images.githubusercontent.com/25829140/43112463-3fbccd44-8ec4-11e8-9500-b225612a8819.JPG)
