@@ -11,3 +11,4 @@
 	-  **Download a zip File:** https://github.com/JaviRoser/FeedReader/archive/master.zip
 	-  **Clone a repo:**  git clone https://github.com/JaviRoser/FeedReader.git
 
+2. Run the index.html, and the tests result will appear at the bottom 
